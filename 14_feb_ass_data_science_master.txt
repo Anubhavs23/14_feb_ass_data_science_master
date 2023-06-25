@@ -1,0 +1,64 @@
+Q1. what is multithreading in python? why is it used? Name the module used to handle threads in python.
+Ans. The threading module is a high-level implementation of multithreading used to deploy an application in Python. To use multithreading, we need to import the threading module in Python Program. A start() method is used to initiate the activity of a thread.
+
+Threading in python is used to run multiple threads (tasks, function calls) at the same time. Note that this does not mean that they are executed on different CPUs. Python threads will NOT make your program faster if it already uses 100 % CPU time. In that case, you probably want to look into parallel programming.
+
+
+Q2.Why threading module used? Write the use of the following functions
+ 1.activeCount()
+ 2.currentThread()
+ 3.enumerate()
+Ans.Threading module is used for creating, controlling and managing threads in python. In this tutorial, we will discuss about various functions and object types defined by the threading module.
+
+threading.activeCount() − Returns the number of thread objects that are active.
+threading.currentThread() − Returns the number of thread objects in the caller's thread control.
+threading.enumerate() − Returns a list of all thread objects that are currently active.
+
+3. Explain the following functions:
+1.run()
+2.start()
+3.join()
+4.isAlive()
+
+Ans.
+run()  − The run() method is the entry point for a thread.
+start()  − The start() method starts a thread by calling the run method.
+join([time])  − The join() waits for threads to terminate.
+isAlive()  − The isAlive() method checks whether a thread is still executing.
+
+4. Write a python program to create two threads. Thread one must print the list of squares and thread two must print the list of cubes.
+Ans.
+
+def square(n):
+    print("Square of number is %d  " %(n*n))
+    
+def cube(n):
+    print("Cube of number id %d " %(n*n*n))
+
+thread5=[threading.Thread(target=square,args=(i,)) for i in [1,2,3,4,5,6,7,8,9,10]]
+
+
+thread6=[threading.Thread(target=cube,args=(i,)) for i in [1,2,3,4,5,6,7,8,9,10]]
+
+
+for i in thread5:
+    i.start()
+for i in thread6:
+    i.start()
+
+Q5. State advantages and disadvantages of multithreading?
+Ans.
+Following are some of the common advantages of multithreading:
+
+->Enhanced performance by decreased development time.
+->Simplified and streamlined program coding.
+->Improvised GUI responsiveness.
+->Simultaneous and parallelized occurrence of tasks.
+->Better use of cache storage by utilization of resources.
+->Decreased cost of maintenance.
+
+Q6.Explain deadlocks and race conditions.
+Ans.A race condition occurs when two threads use the same variable at a given time. Deadlock exists when two threads seek one lock simultaneously. This situation will stop both threads from processing or executing the function
+	
+
+
